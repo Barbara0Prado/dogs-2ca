@@ -24,14 +24,12 @@ res.json ({message: 'Hi Express!' })
 const DB_USER ='barbara'
 const DB_PASSWORD = encodeURIComponent ('dogsapi123')
 
-mongoose.connect (
-  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.mjkcp.mongodb.net/databaseApi?retryWrites=true&w=majority`,
+mongoose
+  .connect (
+     `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.mjkcp.mongodb.net/dogsApi?retryWrites=true&w=majority`,
   )
-  .then(() => {
-    console.log ('We are connected to MongoDB!')
+    .then(() => {
+    console.log ("We are connected to MongoDB!")
     app.listen (3000)
-
   })
-  .catch((err) => console.log(err))
-
-app.listen(3000)
+    .catch((err) => console.log(err))
