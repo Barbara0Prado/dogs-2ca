@@ -12,6 +12,11 @@ app.use(
 
 app.use(express.json ())
 
+//API routes
+const dogRoutes = require('./routes/dogRoutes')
+
+app.use('/dog', dogRoutes)
+
 // Endpoint
 app.get ('/',  (req, res) => {
 
